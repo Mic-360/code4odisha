@@ -17,7 +17,9 @@ class HttpService {
           'email': email,
           'password': password,
         }));
+
     print(response.body);
+
     if (response.statusCode == 200) {
       responseJson = json.decode(response.body);
       SharedPreferences pref = await SharedPreferences.getInstance();
@@ -50,6 +52,7 @@ class HttpService {
           builder: (context) => const navigate(),
         ),
       );
+      // await EasyLoading.showProgress()
     } else {
       await EasyLoading.showError("Error");
     }

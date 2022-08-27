@@ -162,9 +162,6 @@ class _QrCodeState extends State<QrCode> {
               ),
               onPressed: () async {
                 await controller?.flipCamera();
-                setState(() {
-                  ScanText = 'Front Camera se kaise karega?';
-                });
               },
             ),
           ],

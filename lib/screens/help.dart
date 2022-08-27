@@ -119,15 +119,11 @@ class _HelpState extends State<Help> {
                                         ),
                                       ),
                                       TextButton(
-                                        onPressed: () async =>
-                                            await Issue.issues(
-                                                    memID,
-                                                    teamID,
-                                                    'Technical Support',
-                                                    context)
-                                                .whenComplete(() {
-                                          Navigator.pop(context, 'Yes');
-                                        }),
+                                        onPressed: () async {
+                                          await Issue.issues(memID, teamID,
+                                              'Technical Support', context);
+                                          Navigator.pop(context, 'No');
+                                        },
                                         child: const Text(
                                           'Yes',
                                           style: TextStyle(
@@ -170,12 +166,11 @@ class _HelpState extends State<Help> {
                                         ),
                                       ),
                                       TextButton(
-                                        onPressed: () async =>
-                                            await Issue.issues(memID, teamID,
-                                                    'Medical Support', context)
-                                                .whenComplete(() {
+                                        onPressed: () async {
+                                          await Issue.issues(memID, teamID,
+                                              'Medical Support', context);
                                           Navigator.pop(context, 'Yes');
-                                        }),
+                                        },
                                         child: const Text(
                                           'Yes',
                                           style: TextStyle(
