@@ -1,6 +1,5 @@
 import 'package:code4odisha/buttons/roundedbuttons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class Sponsers extends StatelessWidget {
   const Sponsers({super.key});
@@ -12,12 +11,12 @@ class Sponsers extends StatelessWidget {
         backgroundColor: Colors.orange.shade100,
         body: Center(
           child: SingleChildScrollView(
-            physics: AlwaysScrollableScrollPhysics(),
+            physics: const AlwaysScrollableScrollPhysics(),
             child: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment(0.8, 1),
+                  begin: Alignment.topCenter,
+                  end: Alignment(0.2, 1),
                   colors: <Color>[
                     Color(0xff1f005c),
                     Color(0xff5b0060),
@@ -42,7 +41,19 @@ class Sponsers extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.8,
                     ),
                   ),
-                  SizedBox(
+                  Container(
+                    height: 35.0,
+                    width: 40.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white24,
+                    ),
+                    child: const Icon(
+                      Icons.arrow_circle_down,
+                      color: Colors.green,
+                    ),
+                  ),
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
@@ -52,15 +63,15 @@ class Sponsers extends StatelessWidget {
                         'images/logos/1 (13).png',
                         height: MediaQuery.of(context).size.height * 0.1,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Image.asset(
-                        'images/logos/1 (1).jpg',
+                        'images/logos/1 (7).png',
                         height: MediaQuery.of(context).size.height * 0.1,
                         width: MediaQuery.of(context).size.width * 0.3,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Image.asset(
@@ -70,7 +81,7 @@ class Sponsers extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
@@ -81,7 +92,7 @@ class Sponsers extends StatelessWidget {
                         height: MediaQuery.of(context).size.height * 0.1,
                         width: MediaQuery.of(context).size.width * 0.3,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       Image.asset(
@@ -89,7 +100,7 @@ class Sponsers extends StatelessWidget {
                         height: MediaQuery.of(context).size.height * 0.1,
                         width: MediaQuery.of(context).size.width * 0.3,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       Image.asset(
@@ -99,7 +110,7 @@ class Sponsers extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
@@ -110,14 +121,14 @@ class Sponsers extends StatelessWidget {
                         height: MediaQuery.of(context).size.height * 0.1,
                         width: MediaQuery.of(context).size.width * 0.3,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Image.asset(
                         'images/logos/1 (12).png',
                         height: MediaQuery.of(context).size.height * 0.1,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Image.asset(
@@ -126,7 +137,7 @@ class Sponsers extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
@@ -142,7 +153,7 @@ class Sponsers extends StatelessWidget {
                         height: MediaQuery.of(context).size.height * 0.1,
                         width: MediaQuery.of(context).size.width * 0.3,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Image.asset(
@@ -152,7 +163,7 @@ class Sponsers extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
@@ -163,24 +174,25 @@ class Sponsers extends StatelessWidget {
                         height: MediaQuery.of(context).size.height * 0.1,
                         width: MediaQuery.of(context).size.width * 0.3,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Image.asset(
-                        'images/logos/1 (7).png',
+                        'images/logos/new (2).png',
+                        height: MediaQuery.of(context).size.height * 0.1,
+                        width: MediaQuery.of(context).size.width * 0.2,
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Image.asset(
+                        'images/logos/1 (1).jpg',
                         height: MediaQuery.of(context).size.height * 0.1,
                         width: MediaQuery.of(context).size.width * 0.3,
                       ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Image.asset(
-                        'images/logos/1 (13).png',
-                        height: MediaQuery.of(context).size.height * 0.1,
-                      ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
@@ -190,7 +202,7 @@ class Sponsers extends StatelessWidget {
                         'images/logos/1 (5).png',
                         height: MediaQuery.of(context).size.height * 0.1,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Image.asset(
@@ -198,14 +210,9 @@ class Sponsers extends StatelessWidget {
                         height: MediaQuery.of(context).size.height * 0.1,
                         width: MediaQuery.of(context).size.width * 0.3,
                       ),
-                      SizedBox(
-                        width: 5,
-                      ),
-
-                      ///image
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
@@ -216,15 +223,15 @@ class Sponsers extends StatelessWidget {
                         height: MediaQuery.of(context).size.height * 0.1,
                         width: MediaQuery.of(context).size.width * 0.4,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Image.asset(
                         'images/logos/1 (16).png',
                         height: MediaQuery.of(context).size.height * 0.1,
-                        width: MediaQuery.of(context).size.width * 0.3,
+                        width: MediaQuery.of(context).size.width * 0.4,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                     ],
@@ -235,19 +242,24 @@ class Sponsers extends StatelessWidget {
                       Image.asset(
                         'images/logos/new (1).png',
                         height: MediaQuery.of(context).size.height * 0.1,
-                        width: MediaQuery.of(context).size.width * 0.3,
+                        width: MediaQuery.of(context).size.width * 0.5,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
-                      ),
-                      Image.asset(
-                        'images/logos/new (2).png',
-                        height: MediaQuery.of(context).size.height * 0.1,
-                        width: MediaQuery.of(context).size.width * 0.3,
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    'Code4Odisha © 2022 All Rights Reserved',
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 14,
+                    ),
+                  ),
+                  const SizedBox(
                     height: 20,
                   ),
                 ],

@@ -1,3 +1,5 @@
+import 'package:code4odisha/screens/dashboard.dart';
+import 'package:code4odisha/screens/sponsors.dart';
 import 'package:code4odisha/utils/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';

@@ -43,7 +43,7 @@ class _DashboardState extends State<Dashboard> {
         });
       }
 
-      if(prefs.getString('lName') != null ){
+      if (prefs.getString('lName') != null) {
         setState(() {
           list.add(prefs.getString('lName'));
         });
@@ -56,7 +56,6 @@ class _DashboardState extends State<Dashboard> {
         tid = prefs.getString('tid');
         statement = prefs.getString('probStatement');
         table = prefs.getString('table');
-
       });
     });
   }
@@ -74,27 +73,21 @@ class _DashboardState extends State<Dashboard> {
               color: Colors.black,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.only(
-                        bottom: 30.0,
-                        top: 15.0,
-                        left: 8.0,
-                        right: 8.0,
+                    const SizedBox(
+                      height: 41,
+                      child: Icon(
+                        Icons.groups,
+                        size: 50,
+                        color: Colors.white,
                       ),
-                      child: SizedBox(
-                        height: 41,
-                        child: Icon(
-                          Icons.groups,
-                          size: 50,
-                          color: Colors.white,
-                        ),
-                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
                     ),
                     Text(
                       tName ?? '',
@@ -103,27 +96,52 @@ class _DashboardState extends State<Dashboard> {
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
                       ),
-                    )
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const <Widget>[
-                    Text(
-                      'Team ID',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  children: <Widget>[
+                    Column(
+                      children: [
+                        const Text(
+                          'Team ID',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.1,
+                          child: RoundedButtonWidget(
+                            width: MediaQuery.of(context).size.width * 0.1,
+                            buttonText: tid ?? '0',
+                          ),
+                        ),
+                      ],
                     ),
-                    Text(
-                      'Table Number ',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    Column(
+                      children: [
+                        const Text(
+                          'Table Number ',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.1,
+                          child: RoundedButtonWidget(
+                            width: MediaQuery.of(context).size.width * 0.1,
+                            buttonText: table ?? ' 2 ',
+                          ),
+                        ),
+                      ],
                     )
                   ],
                 ),
@@ -131,64 +149,47 @@ class _DashboardState extends State<Dashboard> {
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.1,
-                        child: RoundedButtonWidget(
-                          width: MediaQuery.of(context).size.width * 0.1,
-                          buttonText: tid ?? '0',
-                        ),
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.1,
-                        child: RoundedButtonWidget(
-                          width: MediaQuery.of(context).size.width * 0.1,
-                          buttonText: table ?? ' 2 ',
-                        ),
-                      ),
-                    ],
+                    children: [],
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(left: 40.0),
-                  child: Column(children: [
-                    for (var text in list)
-                      RoundedButtonWidget(
+                  child: Column(
+                    children: [
+                      for (var text in list)
+                        RoundedButtonWidget(
                           buttonText: text,
-                          width: MediaQuery.of(context).size.width * 0.8),
-                  ] //null fix
-                      ),
+                          width: MediaQuery.of(context).size.width * 0.8,
+                        ),
+                    ],
+                  ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 50,
                 ),
-                Column(
-                  children: [
-                    const Text(
-                      'Problem Statement',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(15)),
-                        color: const Color.fromRGBO(16, 15, 15, 1),
-                        border: Border.all(
-                          width: 3,
-                          color: Colors.white,
+                Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(10.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white30,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Text(
+                          'Problem Statement',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontWeight: FontWeight.w800,
+                          ),
                         ),
                       ),
-                      height: MediaQuery.of(context).size.height / 3,
-                      width: MediaQuery.of(context).size.width,
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(20),
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.vertical,
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: Text(
                           statement ?? 'Problem Statement',
                           style: const TextStyle(
@@ -198,8 +199,11 @@ class _DashboardState extends State<Dashboard> {
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
