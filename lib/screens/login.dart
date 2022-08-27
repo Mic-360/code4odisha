@@ -235,7 +235,6 @@ class _LoginState extends State<Login> {
                               actions: [
                                 ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                      // minimumSize: Size(1,3),
                                       foregroundColor: Colors.white,
                                       backgroundColor: Colors.amber.shade900,
                                     ),
@@ -245,12 +244,15 @@ class _LoginState extends State<Login> {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     onPressed: () async {
+                                      Navigator.of(context).pop();
                                       await LoginHelp.issues(
-                                          _emailController.text,
-                                          _nameController.text,
-                                          _msgController.text,
-                                          context).whenComplete(() {
-                                        Navigator.of(context).pop();
+                                              _emailController.text,
+                                              _nameController.text,
+                                              _msgController.text,
+                                              context)
+                                          .whenComplete(() {
+                                        _nameController.clear();
+                                        _msgController.clear();
                                       });
                                     })
                               ],

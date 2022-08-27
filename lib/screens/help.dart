@@ -213,12 +213,11 @@ class _HelpState extends State<Help> {
                                         ),
                                       ),
                                       TextButton(
-                                        onPressed: () async =>
-                                            await Issue.issues(memID, teamID,
-                                                    'Others', context)
-                                                .whenComplete(() {
+                                        onPressed: () async {
                                           Navigator.pop(context, 'Yes');
-                                        }),
+                                            await Issue.issues(memID, teamID,
+                                                    'Others', context);
+                                        },
                                         child: const Text(
                                           'Yes',
                                           style: TextStyle(
@@ -276,6 +275,7 @@ class _HelpState extends State<Help> {
                                                           FontWeight.bold),
                                                 ),
                                                 onPressed: () async {
+                                                    Navigator.pop(context);
                                                   await Feed.issues(
                                                           email,
                                                           tName,
@@ -283,7 +283,6 @@ class _HelpState extends State<Help> {
                                                           context)
                                                       .whenComplete(() {
                                                     _msgController.clear();
-                                                    Navigator.pop(context);
                                                   });
                                                 })
                                           ],
