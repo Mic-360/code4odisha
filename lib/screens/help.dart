@@ -120,9 +120,9 @@ class _HelpState extends State<Help> {
                                       ),
                                       TextButton(
                                         onPressed: () async {
+                                          Navigator.pop(context, 'No');
                                           await Issue.issues(memID, teamID,
                                               'Technical Support', context);
-                                          Navigator.pop(context, 'No');
                                         },
                                         child: const Text(
                                           'Yes',
@@ -167,9 +167,9 @@ class _HelpState extends State<Help> {
                                       ),
                                       TextButton(
                                         onPressed: () async {
+                                          Navigator.pop(context, 'Yes');
                                           await Issue.issues(memID, teamID,
                                               'Medical Support', context);
-                                          Navigator.pop(context, 'Yes');
                                         },
                                         child: const Text(
                                           'Yes',
