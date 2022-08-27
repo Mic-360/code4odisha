@@ -18,7 +18,6 @@ class HttpService {
           'password': password,
         }));
 
-    print(response.body);
 
     if (response.statusCode == 200) {
       responseJson = json.decode(response.body);
@@ -45,14 +44,13 @@ class HttpService {
       if (responseJson['lName'] != null) {
         pref.setString('lName', responseJson['lName']);
       }
-      print(pref.getString('uName'));
+      
       await Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => const navigate(),
         ),
       );
-      // await EasyLoading.showProgress()
     } else {
       await EasyLoading.showError("Error");
     }
@@ -155,8 +153,7 @@ class Broadcast {
       Uri.parse('http://c4obackendtest.herokuapp.com/getBroadcast');
 
   static getcast() async {
-    http.Response response =
-        await _client.get(_loginUrl);
+    http.Response response = await _client.get(_loginUrl);
 
     print(response.body);
     if (response.statusCode == 200) {

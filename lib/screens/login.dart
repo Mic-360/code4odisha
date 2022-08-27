@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:code4odisha/utils/api.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Login extends StatefulWidget {
@@ -18,6 +21,8 @@ class _LoginState extends State<Login> {
   bool hiddenPassword = true;
   final TextEditingController _msgController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
+  Timer? _timer;
+  late double _progress;
 
   @override
   void dispose() {
@@ -162,6 +167,21 @@ class _LoginState extends State<Login> {
                       InkWell(
                         onTap: () async {
                           if (loginKey.currentState!.validate()) {
+                            _progress = 0;
+                            _timer?.cancel();
+                            _timer = Timer.periodic(
+                                const Duration(milliseconds: 100),
+                                (Timer timer) {
+                              EasyLoading.showProgress(_progress,
+                                  status:
+                                      '${(_progress * 100).toStringAsFixed(0)}%');
+                              _progress += 0.05;
+
+                              if (_progress >= 1) {
+                                _timer?.cancel();
+                                EasyLoading.dismiss();
+                              }
+                            });
                             if (email.isNotEmpty && password.isNotEmpty) {
                               await HttpService.login(email, password, context);
                             }

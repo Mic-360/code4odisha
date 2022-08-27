@@ -1,3 +1,4 @@
+import 'package:code4odisha/buttons/roundedbuttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -8,24 +9,37 @@ class Sponsers extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.black38,
+        backgroundColor: Colors.orange.shade100,
         body: Center(
           child: SingleChildScrollView(
             physics: AlwaysScrollableScrollPhysics(),
             child: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment(0.8, 1),
+                  colors: <Color>[
+                    Color(0xff1f005c),
+                    Color(0xff5b0060),
+                    Color(0xff870160),
+                    Color(0xffac255e),
+                    Color(0xffca485c),
+                    Color(0xffe16b5c),
+                    Color(0xfff39060),
+                    Color(0xffffb56b),
+                  ],
+                  tileMode: TileMode.mirror,
+                ),
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15.0),
-                    child: Text(
-                      'Our Sponsors',
-                      style: TextStyle(
-                        fontSize: 50,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    child: RoundedButtonWidget(
+                      buttonText: 'Our Sponsors',
+                      width: MediaQuery.of(context).size.width * 0.8,
                     ),
                   ),
                   SizedBox(
